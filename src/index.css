@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Travel Blog Design System - Warm, adventurous palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core colors - warm travel theme */
+    --background: 45 45% 98%;
+    --foreground: 25 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 35% 96%;
+    --card-foreground: 25 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 35% 96%;
+    --popover-foreground: 25 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Golden sunset */
+    --primary: 38 92% 50%;
+    --primary-foreground: 45 35% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft orange */
+    --secondary: 24 95% 53%;
+    --secondary-foreground: 45 35% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Tertiary - Sandy beige */
+    --tertiary: 45 85% 88%;
+    --tertiary-foreground: 25 25% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm amber */
+    --accent: 32 95% 44%;
+    --accent-foreground: 45 35% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 45 25% 92%;
+    --muted-foreground: 25 15% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 35% 98%;
 
-    --radius: 0.5rem;
+    --border: 45 25% 88%;
+    --input: 45 25% 88%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom travel theme tokens */
+    --adventure-gradient: linear-gradient(135deg, hsl(38 92% 50%), hsl(24 95% 53%));
+    --sunset-gradient: linear-gradient(180deg, hsl(32 95% 44%), hsl(38 92% 50%));
+    --warm-shadow: 0 10px 30px -5px hsl(38 92% 50% / 0.2);
+    --hero-overlay: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+    
+    /* Typography scale */
+    --font-size-hero: 3.5rem;
+    --font-size-section: 2.5rem;
+    --font-size-card: 1.25rem;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce-gentle: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +77,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - warm evening travel theme */
+    --background: 25 35% 8%;
+    --foreground: 45 35% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 25% 12%;
+    --card-foreground: 45 35% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 45 35% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 92% 60%;
+    --primary-foreground: 25 35% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 24 85% 45%;
+    --secondary-foreground: 45 35% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --tertiary: 45 25% 20%;
+    --tertiary-foreground: 45 35% 95%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 32 85% 55%;
+    --accent-foreground: 25 35% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 45 15% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 35% 95%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 38 92% 60%;
+
+    --adventure-gradient: linear-gradient(135deg, hsl(38 92% 60%), hsl(24 85% 45%));
+    --sunset-gradient: linear-gradient(180deg, hsl(32 85% 35%), hsl(38 92% 60%));
+    --warm-shadow: 0 10px 30px -5px hsl(38 92% 60% / 0.3);
   }
 }
 
@@ -100,6 +121,101 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-text {
+    @apply text-white drop-shadow-2xl;
+  }
+  
+  .hero-overlay {
+    background: var(--hero-overlay);
+  }
+
+  /* Card hover effects */
+  .travel-card {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    box-shadow: var(--warm-shadow);
+  }
+
+  .travel-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Button variants */
+  .btn-adventure {
+    @apply bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-4 rounded-xl;
+    @apply hover:shadow-2xl transform hover:scale-105 transition-all duration-300;
+    background: var(--adventure-gradient);
+  }
+
+  .btn-outline-warm {
+    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-xl;
+    @apply hover:bg-primary hover:text-white transition-all duration-300;
+  }
+
+  /* Typography styles */
+  .heading-hero {
+    @apply text-6xl md:text-7xl font-bold leading-tight;
+    font-size: var(--font-size-hero);
+  }
+
+  .heading-section {
+    @apply text-4xl md:text-5xl font-bold text-foreground mb-6;
+    font-size: var(--font-size-section);
+  }
+
+  .heading-card {
+    @apply text-xl font-semibold;
+    font-size: var(--font-size-card);
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  /* Navigation styles */
+  .nav-glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  /* Gallery styles */
+  .gallery-item {
+    @apply transition-all duration-300 hover:scale-110 cursor-pointer;
+  }
+
+  /* Form styles */
+  .form-floating {
+    @apply bg-white/90 backdrop-blur-sm border border-border rounded-xl p-6;
+    box-shadow: var(--warm-shadow);
   }
 }
