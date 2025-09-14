@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import galleryImage from "@/assets/travel-gallery.jpg";
+import minimalTravel from "@/assets/minimalist-travel-1.jpg";
 
 const PhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -41,24 +42,30 @@ const PhotoGallery = () => {
     },
     {
       id: 6,
+      src: minimalTravel,
+      alt: "Minimalist travel adventure",
+      location: "Wanderlust"
+    },
+    {
+      id: 7,
       src: galleryImage,
       alt: "Travel destination collage",
       location: "Multiple"
     },
     {
-      id: 7,
+      id: 8,
       src: "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       alt: "Desert adventure",
       location: "Jordan"
     },
     {
-      id: 8,
+      id: 9,
       src: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       alt: "City exploration",
       location: "Vietnam"
     },
     {
-      id: 9,
+      id: 10,
       src: "https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       alt: "Local cuisine experience",
       location: "India"
@@ -86,10 +93,17 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 px-4 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="gallery" className="py-20 px-4 bg-background relative overflow-hidden">
+      {/* Decorative floating elements */}
+      <div className="absolute top-10 left-20 w-20 h-20 bg-secondary/10 rounded-full float-animation"></div>
+      <div className="absolute bottom-20 right-20 w-16 h-16 bg-primary/10 rounded-full float-animation" style={{ animationDelay: "1s" }}></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="heading-section">Photo & Video Gallery</h2>
+          <h2 className="heading-section flex items-center justify-center gap-3">
+            <Camera className="h-10 w-10 text-primary" />
+            Photo & Video Gallery
+          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A glimpse into our adventures around the world. Every photo tells a story, 
             every destination holds a memory worth sharing.

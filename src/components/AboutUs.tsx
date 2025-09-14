@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Users, DollarSign, Camera } from "lucide-react";
 import aboutImage from "@/assets/about-us-friends.jpg";
+import travelElements from "@/assets/travel-elements.jpg";
 
 const AboutUs = () => {
   const stats = [
@@ -21,8 +22,16 @@ const AboutUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 px-4 bg-background relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-20 right-10 opacity-20">
+        <img src={travelElements} alt="" className="w-32 h-32 object-contain" />
+      </div>
+      <div className="absolute bottom-20 left-10 opacity-10">
+        <div className="w-40 h-40 bg-primary/20 rounded-full"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="heading-section">Meet the Wanderlust Duo</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
